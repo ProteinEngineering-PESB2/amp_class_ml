@@ -1,9 +1,6 @@
-from bio_embeddings.embed import (BeplerEmbedder, CPCProtEmbedder, FastTextEmbedder,
-                                 GloveEmbedder, OneHotEncodingEmbedder, PLUSRNNEmbedder,
-                                 ProtTransAlbertBFDEmbedder, ProtTransBertBFDEmbedder,
+from bio_embeddings.embed import (ProtTransBertBFDEmbedder, ProtTransAlbertBFDEmbedder,
                                  ProtTransT5BFDEmbedder, ProtTransT5UniRef50Embedder,
-                                 ProtTransT5XLU50Embedder, ProtTransXLNetUniRef100Embedder,
-                                 Word2VecEmbedder)
+                                 ProtTransT5XLU50Embedder, ESM1bEmbedder, ProtTransXLNetUniRef100Embedder)
 import numpy as np
 from tqdm import tqdm
 import pandas as pd
@@ -47,38 +44,18 @@ class BioEmbeddings:
         else:
             return list(self.embeddings)
 
-    def apply_bepler(self):
-        """Apply Bepler embedder"""
-        return self.__apply_model(BeplerEmbedder)
-    
-    def apply_cpcprot(self):
-        """Apply CPCProt embedder"""
-        return self.__apply_model(CPCProtEmbedder)
-    
-    def apply_fasttext(self):
-        """Apply FastText embedder"""
-        return self.__apply_model(FastTextEmbedder)
-    
-    def apply_glove(self):
-        """Apply Glove embedder"""
-        return self.__apply_model(GloveEmbedder)
-    
-    def apply_onehot(self):
-        """Apply OneHotEncoding embedder"""
-        return self.__apply_model(OneHotEncodingEmbedder)
-    
-    def apply_plus_rnn(self):
-        """Apply PLUSRNN embedder"""
-        return self.__apply_model(PLUSRNNEmbedder)
-    
-    def apply_prottrans_albert(self):
-        """Apply ProtTransAlbert embedder"""
-        return self.__apply_model(ProtTransAlbertBFDEmbedder)
+    def apply_esm1b(self):
+        """Apply ESM1b embedder"""
+        return self.__apply_model(ESM1bEmbedder)
     
     def apply_prottrans_bert(self):
         """Apply ProtTransBertBFD embedder"""
         return self.__apply_model(ProtTransBertBFDEmbedder)
     
+    def apply_prottrans_albert(self):
+        """Apply ProtTransBertBFD embedder"""
+        return self.__apply_model(ProtTransAlbertBFDEmbedder)
+        
     def apply_prottrans_t5_uniref(self):
         """Apply ProtTransT5UniRef50 embedder"""
         return self.__apply_model(ProtTransT5UniRef50Embedder)
@@ -91,10 +68,6 @@ class BioEmbeddings:
         """Apply ProtTransT5BFD embedder"""
         return self.__apply_model(ProtTransT5BFDEmbedder)
     
-    def apply_prottrans_xlnetuniref100(self):
-        """Apply ProtTransXLNetUniRef100 embedder"""
+    def apply_prottrans_xlnet(self):
+        """Apply ProtTransXLNET embedder"""
         return self.__apply_model(ProtTransXLNetUniRef100Embedder)
-    
-    def apply_word2vec(self):
-        """Apply Word2Vec embedder"""
-        return self.__apply_model(Word2VecEmbedder)
