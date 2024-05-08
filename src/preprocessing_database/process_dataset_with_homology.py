@@ -44,7 +44,7 @@ df_data_negative = df_data[df_data["activity"] == 0]
 df_to_fasta(df_data_positive, f"{path_export}positive_data.fasta")
 df_to_fasta(df_data_negative, f"{path_export}negative_data.fasta")
 
-command_pos = f"cd-hit -i {path_export}positive_data.fasta -o {path_export}positive_data_filter.fasta -c 0.9"
+command_pos = f"cd-hit -i {path_export}positive_data.fasta -o {path_export}positive_data_filter.fasta -c 0.99"
 command_neg = f"cd-hit -i {path_export}negative_data.fasta -o {path_export}negative_data_filter.fasta -c 0.7"
 
 os.system(command_pos)
@@ -52,6 +52,9 @@ os.system(command_neg)
 
 df_positive_filter = read_fasta(f"{path_export}positive_data_filter.fasta")
 df_negative_filter = read_fasta(f"{path_export}negative_data_filter.fasta")
+
+print("Positive: ", len(df_positive_filter))
+print("Negative: ", len(df_negative_filter))
 
 command = f"rm {path_export}*.fasta"
 os.system(command)
