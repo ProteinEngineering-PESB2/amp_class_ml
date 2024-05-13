@@ -1,0 +1,2 @@
+params,train_accuracy,train_precision,train_f1,train_recall,test_accuracy,test_precision,test_f1,test_recall,test_mcc,test_cm,overfitting_ratio
+"{'n_estimators': 2785, 'criterion': 'log_loss', 'min_samples_split': 4, 'min_samples_leaf': 2, 'max_features': 'log2'}",0.8382316118935836,0.8461951042022886,0.8335728682498325,0.8218906972071529,0.8335766423357664,0.831858407079646,0.8663594470046083,0.8,0.6697131204527869,"[[578, 87], [141, 564]]",0.9733654398552762
