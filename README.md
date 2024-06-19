@@ -23,7 +23,7 @@ https://doi.org/XXXX<br>
 - [Results and models](#data)
 ---
 
-<a name="summary">Requirements and instalation</a>
+<a name="summary"></a>
 
 # Protein language models and machine learning facilitate the identification of antimicrobial peptides.
 
@@ -48,3 +48,14 @@ Once this repository is cloned, please run the following command:
     conda env create -f environment.yml
 ```
 <a name="data">Raw data and collection process</a>
+
+- All data was collected from the [Peptipedia v2.0 database](https://app.peptipedia.cl/)
+- The raw data are also available on [Google Drive](https://drive.google.com/drive/folders/1IO_mL6Jt7vGQZ6aE7lK6crQFiLzZ62Cf?usp=sharing)
+- Also, the raw data is available on the folder [raw_data](raw_data)
+- With the raw data, you can create a binary classification models. First, create the pivoted dataset executing the following script:
+
+```
+    python src/preprocessing_data/create_pivoted_data.py path_to_raw_data path_to_export
+```
+
+- The script will generate a *.csv file with all sequences and all activities in a binarized format.
