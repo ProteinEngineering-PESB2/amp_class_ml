@@ -1,2 +1,0 @@
-params,train_accuracy,train_precision,train_f1,train_recall,test_accuracy,test_precision,test_f1,test_recall,test_mcc,test_cm,overfitting_ratio
-"{'n_estimators': 1997, 'criterion': 'gini', 'min_samples_split': 10, 'min_samples_leaf': 6, 'max_features': 'sqrt'}",0.8763513513513514,0.9157847501943325,0.8697698961702995,0.828246866844475,0.8825847123719465,0.8784665579119086,0.916595744680851,0.8433829287392326,0.7677608525388742,"[[1163, 98], [200, 1077]]",1.0182748193813569
