@@ -17,10 +17,11 @@ https://doi.org/XXXX<br>
 ## Table of Contents
 - [A summary of the proposed work](#summary)
 - [Requirements and instalation](#requirements)
-- [Raw data](#data)
-- [Implemented pipeline](#data)
-- [Demos](#data)
-- [Results and models](#data)
+- [Raw data and preprocessing](#data)
+- [Numerical representation strategies](#numerical)
+- [Implemented pipeline](#pipeline)
+- [Demos](#demos)
+- [Results and models](#results)
 ---
 
 <a name="summary"></a>
@@ -59,3 +60,13 @@ Once this repository is cloned, please run the following command:
 ```
 
 - The script will generate a *.csv file with all sequences and all activities in a binarized format.
+
+- With the pivoted dataset, a binary classification model can be create using the jupyter notebook example: [notebooks_examples/creating_binary_dataset.ipynb](notebooks_examples/creating_binary_dataset.ipynb). Please, select the positive activity and the generate the binary dataset.
+
+- With the binary dataset generated, the redundancy homology need to be removed. Please, run the script:
+
+```
+    python src/preprocessing_data/remove_redundancy.py binary_dataset path_export benchmark_ratio name_col_with_activity redundacy_positive redundancy_negative
+```
+
+The script works with the input binary dataset and first split the dataset into positive and negative examples. Then, for each dataset, the CD-Hit tool is applied to remove redundancy using the given proportions for positive and negative examples. Then, undersampling is applied and the division between training and testing is addressed using the benchmark_ration. Finally, two datasets are generated.
