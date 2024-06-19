@@ -23,7 +23,7 @@ https://doi.org/XXXX<br>
 - [Results and models](#data)
 ---
 
-<a name="summary"></a>
+<a name="summary">Requirements and instalation</a>
 
 # Protein language models and machine learning facilitate the identification of antimicrobial peptides.
 
@@ -32,3 +32,19 @@ In recent years, the amount of data describing peptide sequences and function co
 This work introduces sequence-based classification models for detecting peptides' functional biological activities, focusing on accelerating the discovery and *de novo* design of potential antimicrobial peptides (AMPs). 
 A novel sequence-based pipeline was developed to train binary classification models, integrating protein language models and machine learning algorithms. This pipeline produced 21 models targeting antimicrobial, antiviral, and antibacterial activities, achieving an average precision exceeding 83%. Benchmark analyses revealed that our models outperformed existing methods for AMPs and delivered comparable results for other biological activities. Utilizing the Peptide Atlas, we discovered over 300,000 potential AMPs and demonstrated an integrative approach with generative learning to aid in the *de novo* design, resulting in over 500 novel AMPs. 
 The combination of our methodology, robust models, and generative design strategy highlights a significant advancement in peptide-based drug discovery and represents a pivotal tool for therapeutic applications.
+
+<a name="requirements">Requirements and Install process</a>
+
+The requirements are summarized in the [environment.yml](environment.yml) file. Some requirements are summarized below:
+
+- Python version 3.9+
+- bio-embeddings
+- scikit-learn
+- xgboost
+
+Once this repository is cloned, please run the following command:
+
+```
+    conda env create -f environment.yml
+```
+<a name="data">Raw data and collection process</a>
