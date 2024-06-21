@@ -112,6 +112,24 @@ Examples of how to apply the implemented module are available as jupyter noteboo
 - Tuning hyperparameters: [notebooks_examples/tuning_hyperparams.ipynb](notebooks_examples/tuning_hyperparams.ipynb)
 - Load and use a trained model: [notebooks_examples/load_model.ipynb](notebooks_examples/load_model.ipynb)
 
+<a name="pipeline"></a>
+
+<h2>
+    Implemented pipeline
+</h2>
+
+The implemented pipeline is represented in the following figure:
+
+![alt text](figures/pipeline_training_models.png)
+
+**Proposed methodology to generate and evaluate predictive models.**  **A.** Numerical representation of sequence datasets. Here, we explore different encoding strategies, including classic methods such as One Hot encoder, physicochemical property-based encoders, and embedding based on pre-trained models. All different methods are applied individually. Once the input dataset is encoded, it is randomly split in a 90:10 ratio, using the first part to develop models and the second as a benchmark dataset. **B.** Using the model development dataset and all its possible numerical representations, we explore different 80:20 partitions to use for model training and validation. We explore and evaluate different models and hyperparameters using classic performance metrics. As this stage is repeated an arbitrary number of times, we obtain distributions of performance for each model.  **C.** Based on the distribution of performance, the best-performing combinations of algorithms and numerical representations were selected based on statistical criteria. These models undergo a hyperparameter optimization procedure based on Bayesian criteria. **D.** Finally, we evaluate the performance of the models generated (and other tools/methods used to compare) using the benchmark dataset and export the best strategy for future use.
+
+<a name="generative"></a>
+
+<h2>
+    Generative approaches
+</h2>
+
 <a name="references"> </a>
     <h2>
         References
