@@ -130,6 +130,14 @@ The implemented pipeline is represented in the following figure:
     Generative approaches
 </h2>
 
+This work applied two VAE strategies to explore generative approaches for generating *de novo* potential antimicrobial peptides. First, we generate 100,000 novel peptide sequences using the previously collected antimicrobial peptide dataset and the model implemented by [5]. We analyze the resulting dataset to remove redundancy and exclude results already reported in  Peptipedia [6] and the Peptide Atlas[7]. 
+
+The second strategy is based on the architecture and methods proposed by [8]. Using the processed antimicrobial peptide dataset, a VAE model is trained by applying the architecture proposed in [8]. Then, 100,000 novel peptide sequences are generated using the trained models and the antimicrobial peptide dataset. The same filters were applied to discard redundancy and coincidence with Peptipedia and Peptide Atlas databases.
+
+Once the novel peptide sequences are generated, we apply the models and encoding strategies developed in this work to classify these unknown peptide sequences. The stages are (i) applying numerical representation for each classification model, and (ii) predicting the novel sequences using the antimicrobial classification model and the different subtypes of classification models, like antiviral, antibacterial, and anuran defence. All classification models use a threshold to generate the classification based on the probability predicted for each category type (has the activity or has not the activity) on each model. This work applies a threshold of 0.7 to reduce the probability of error in a classification. 
+
+Finally, the classified peptides are explored based on moonlighting properties and compared with the reported antimicrobial peptides and the predictions of novel potential antimicrobial peptides detected from the Peptide Atlas database.
+
 <a name="references"> </a>
     <h2>
         References
@@ -139,3 +147,7 @@ The implemented pipeline is represented in the following figure:
 - [2] Medina-Ortiz, D., Contreras, S., Amado-Hinojosa, J., Torres-Almonacid, J., Asenjo, J. A., Navarrete, M., & Olivera-Nappa, Á. (2022). Generalized property-based encoders and digital signal processing facilitate predictive tasks in protein engineering. Frontiers in Molecular Biosciences, 9, 898627.
 - [3] Medina-Ortiz, D., Contreras, S., Amado-Hinojosa, J., Torres-Almonacid, J., Asenjo, J. A., Navarrete, M., & Olivera-Nappa, A. (2020). Combination of digital signal processing and assembled predictive models facilitates the rational design of proteins. arXiv preprint arXiv:2010.03516.
 - [4] Akiba, T., Sano, S., Yanase, T., Ohta, T., & Koyama, M. (2019, July). Optuna: A next-generation hyperparameter optimization framework. In Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining (pp. 2623-2631).
+- [5] Greener, J. G., Moffat, L., & Jones, D. T. (2018). Design of metalloproteins and novel protein folds using variational autoencoders. Scientific reports, 8(1), 16189.
+- [6] Quiroz, C., Saavedra, Y. B., Armijo-Galdames, B., Amado-Hinojosa, J., Olivera-Nappa, Á., Sanchez-Daza, A., & Medina-Ortiz, D. (2021). Peptipedia: a user-friendly web application and a comprehensive database for peptide research supported by machine learning approach. Database, 2021, baab055.
+- [7] Deutsch, E. W., Lam, H., & Aebersold, R. (2008). PeptideAtlas: a resource for target selection for emerging targeted proteomics workflows. EMBO reports, 9(5), 429-434.
+- [8] Hawkins-Hooker, A., Depardieu, F., Baur, S., Couairon, G., Chen, A., & Bikard, D. (2021). Generating functional protein variants with variational autoencoders. PLoS computational biology, 17(2), e1008736.
