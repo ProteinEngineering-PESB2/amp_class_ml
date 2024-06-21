@@ -19,9 +19,9 @@ https://doi.org/XXXX<br>
 - [Requirements and instalation](#requirements)
 - [Raw data and preprocessing](#data)
 - [Numerical representation strategies](#numerical)
+- [Training, tuning hyperparameters, and load models](#training)
 - [Implemented pipeline](#pipeline)
-- [Demos](#demos)
-- [Results and models](#results)
+- [Generative approaches](#generative)
 - [References](#references)
 ---
 
@@ -95,6 +95,23 @@ A numerical representation module was implemented to apply the strategies and co
 - See the module [src/numerical_representation_strategy](src/numerical_representation_strategy) for the source code
 - See the jupyter notebool [notebooks_examples/encoding_peptide_sequences.ipynb](notebooks_examples/encoding_peptide_sequences.ipynb) for an example.
 
+<a name="training"> </a>
+
+<h2>
+    Training and tuning hyperparameters
+</h2>
+
+With the dataset coded, a binary classification model could be trained using the modules available in [src/training_models](src/training_models). This module facilitates:
+
+- Training classification models, selecting *k*-fold cross-validation and applying different metrics to evaluate the performances.
+- Apply tuning-hyperparameters through Bayesian approaches using the Optuna framework [4].
+
+Examples of how to apply the implemented module are available as jupyter notebook examples, please see:
+
+- Training a classification model: [notebooks_examples/training_class_model.ipynb](notebooks_examples/training_class_model.ipynb)
+- Tuning hyperparameters: [notebooks_examples/tuning_hyperparams.ipynb](notebooks_examples/tuning_hyperparams.ipynb)
+- Load and use a trained model: [notebooks_examples/load_model.ipynb](notebooks_examples/load_model.ipynb)
+
 <a name="references"> </a>
     <h2>
         References
@@ -103,3 +120,4 @@ A numerical representation module was implemented to apply the strategies and co
 - [1] Dallago, C., Schütze, K., Heinzinger, M., Olenyi, T., Littmann, M., Lu, A. X., ... & Rost, B. (2021). Learned embeddings from deep learning to visualize and predict protein sets. Current Protocols, 1(5), e113.
 - [2] Medina-Ortiz, D., Contreras, S., Amado-Hinojosa, J., Torres-Almonacid, J., Asenjo, J. A., Navarrete, M., & Olivera-Nappa, Á. (2022). Generalized property-based encoders and digital signal processing facilitate predictive tasks in protein engineering. Frontiers in Molecular Biosciences, 9, 898627.
 - [3] Medina-Ortiz, D., Contreras, S., Amado-Hinojosa, J., Torres-Almonacid, J., Asenjo, J. A., Navarrete, M., & Olivera-Nappa, A. (2020). Combination of digital signal processing and assembled predictive models facilitates the rational design of proteins. arXiv preprint arXiv:2010.03516.
+- [4] Akiba, T., Sano, S., Yanase, T., Ohta, T., & Koyama, M. (2019, July). Optuna: A next-generation hyperparameter optimization framework. In Proceedings of the 25th ACM SIGKDD international conference on knowledge discovery & data mining (pp. 2623-2631).
