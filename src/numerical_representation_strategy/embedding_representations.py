@@ -49,187 +49,272 @@ class BioEmbeddings:
         else:
             return list(self.embeddings)
 
-    def apply_esm1b(self, name_export):
+    def apply_esm1b(self, name_export=None):
         """Apply ESM1b embedder"""
-        command = f"mkdir -p {self.path_export}esm1b"
-        os.system(command)
+        
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}esm1b"
+            os.system(command)
         
         response = self.__apply_model(ESM1bEmbedder)
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}esm1b/{name_export}.csv", index=False)
+        if name_export != None:
+            response.to_csv(f"{self.path_export}esm1b/{name_export}.csv", index=False)
+
+        return response
     
-    def apply_prottrans_bert(self, name_export):
+    def apply_prottrans_bert(self, name_export=None):
         """Apply ProtTransBertBFD embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_bert"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_bert"
+            os.system(command)
 
         response =  self.__apply_model(ProtTransBertBFDEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_bert/{name_export}.csv", index=False)
 
-    def apply_prottrans_albert(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_bert/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_prottrans_albert(self, name_export=None):
         """Apply ProtTransBertBFD embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_albert"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_albert"
+            os.system(command)
 
         response= self.__apply_model(ProtTransAlbertBFDEmbedder)
         
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_albert/{name_export}.csv", index=False)
 
-    def apply_prottrans_t5_uniref(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_albert/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_prottrans_t5_uniref(self, name_export=None):
         """Apply ProtTransT5UniRef50 embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_uniref"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_uniref"
+            os.system(command)
 
         response = self.__apply_model(ProtTransT5UniRef50Embedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_uniref/{name_export}.csv", index=False)
 
-    def apply_prottrans_t5_xlu50(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_uniref/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_prottrans_t5_xlu50(self, name_export=None):
         """Apply ProtTransT5XLU50 embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_xlu50"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_xlu50"
+            os.system(command)
 
         response =  self.__apply_model(ProtTransT5XLU50Embedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_xlu50/{name_export}.csv", index=False)
 
-    def apply_prottrans_t5bdf(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_xlu50/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_prottrans_t5bdf(self, name_export=None):
         """Apply ProtTransT5BFD embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_bdf"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_bdf"
+            os.system(command)
 
         response =  self.__apply_model(ProtTransT5BFDEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_bdf/{name_export}.csv", index=False)
 
-    def apply_prottrans_xlnet(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_bdf/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_prottrans_xlnet(self, name_export=None):
         """Apply ProtTransXLNET embedder"""
 
-        command = f"mkdir -p {self.path_export}protrans_xlnet"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}protrans_xlnet"
+            os.system(command)
 
         response =  self.__apply_model(ProtTransXLNetUniRef100Embedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}protrans_xlnet/{name_export}.csv", index=False)
 
-    def apply_bepler(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}protrans_xlnet/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_bepler(self, name_export=None):
         """Apply BeplerEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}bepler"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}bepler"
+            os.system(command)
 
         response =  self.__apply_model(BeplerEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}bepler/{name_export}.csv", index=False)
 
-    def apply_cpc_prot(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}bepler/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_cpc_prot(self, name_export=None):
         """Apply CPCProtEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}cpcprot"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}cpcprot"
+            os.system(command)
 
         response =  self.__apply_model(CPCProtEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}cpcprot/{name_export}.csv", index=False)
 
-    def apply_esme(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}cpcprot/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_esme(self, name_export=None):
         """Apply ESMEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}esme"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}esme"
+            os.system(command)
 
         response =  self.__apply_model(ESMEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}esme/{name_export}.csv", index=False)
 
-    def apply_esme1v(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}esme/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_esme1v(self, name_export=None):
         """Apply ESM1vEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}esme1v"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}esme1v"
+            os.system(command)
 
         response =  self.__apply_model(ESM1vEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}esme1v/{name_export}.csv", index=False)
 
-    def apply_fasttextv(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}esme1v/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_fasttextv(self, name_export=None):
         """Apply FastTextEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}fasttext"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}fasttext"
+            os.system(command)
 
         response =  self.__apply_model(FastTextEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}fasttext/{name_export}.csv", index=False)
 
-    def apply_glove(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}fasttext/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_glove(self, name_export=None):
         """Apply GloveEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}glove"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}glove"
+            os.system(command)
 
         response =  self.__apply_model(GloveEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}glove/{name_export}.csv", index=False)
 
-    def apply_onehot(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}glove/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_onehot(self, name_export=None):
         """Apply OneHotEncodingEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}onehot"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}onehot"
+            os.system(command)
 
         response =  self.__apply_model(OneHotEncodingEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}onehot/{name_export}.csv", index=False)
 
-    def apply_plusrnn(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}onehot/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_plusrnn(self, name_export=None):
         """Apply PLUSRNNEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}plusrnn"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}plusrnn"
+            os.system(command)
 
         response =  self.__apply_model(PLUSRNNEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}plusrnn/{name_export}.csv", index=False)
 
-    def apply_seqvec(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}plusrnn/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_seqvec(self, name_export=None):
         """Apply SeqVecEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}seqvec"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}seqvec"
+            os.system(command)
 
         response =  self.__apply_model(SeqVecEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}seqvec/{name_export}.csv", index=False)
 
-    def apply_word2vec(self, name_export):
+        if name_export != None:
+            response.to_csv(f"{self.path_export}seqvec/{name_export}.csv", index=False)
+
+        return response
+    
+    def apply_word2vec(self, name_export=None):
         """Apply Word2VecEmbedder embedder"""
 
-        command = f"mkdir -p {self.path_export}word2vec"
-        os.system(command)
+        if self.path_export != None:
+            command = f"mkdir -p {self.path_export}word2vec"
+            os.system(command)
 
         response =  self.__apply_model(Word2VecEmbedder)
 
         response[self.column_response] = self.dataset[self.column_response]
-        response.to_csv(f"{self.path_export}word2vec/{name_export}.csv", index=False)
+
+        if name_export != None:
+            response.to_csv(f"{self.path_export}word2vec/{name_export}.csv", index=False)
+        
+        return response
