@@ -411,7 +411,7 @@ dependencies:
       - wsproto==1.2.0
       - wtforms==3.1.1
       - wtforms-recaptcha==0.3.2
-      - xgboost==1.7.5
+      - xgboost==1.6.2
       - xlrd==2.0.1
       - xyzservices==2023.10.1
       - yarl==1.8.2
