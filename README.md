@@ -5,7 +5,7 @@ David Medina-Ortiz<sup>1,2*</sup>, Seba Contreras<sup>3*</sup>, Diego Fernández
 
 Protein language models and machine learning facilitate the identification of antimicrobial peptides. <br>
 
-https://doi.org/XXXX](https://doi.org/10.3390/ijms25168851)<br>
+https://doi.org/XXXX](https://doi.org/10.3390/ijms25168851<br>
 
 <sup>*1*</sup><sub>Departamento de Ingeniería en Computación, Universidad de Magallanes, Av. Pdte. Manuel Bulnes 01855, 6210427, Punta Arenas, Chile.</sub> <br>
 <sup>*2*</sup><sub>Centre for Biotechnology and Bioengineering, CeBiB, Universidad de Chile, Avenida Beauchef 851, 8320000, Santiago, Chile.</sub> <br>
